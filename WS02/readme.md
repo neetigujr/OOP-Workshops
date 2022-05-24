@@ -2,7 +2,14 @@
 
 * Version 1.0
 
+
 In this workshop, you will use references, overload functions, and deallocate (free) memory.
+
+## The Overview session
+
+The overview session will be held on Tue. May 24th at 16:20.
+
+To join the session click here [WS2 Overview]()
 
 ## Learning Outcomes
 
