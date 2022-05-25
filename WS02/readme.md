@@ -9,9 +9,9 @@ In this workshop, you will use references, overload functions, and deallocate (f
 
 ## The Overview session
 
-The overview session will be held on Tue. May 24th at 16:20.
+The overview session was held on Tue. May 24th at 16:20.
 
-To join the session click here [WS2 Overview](https://connect.rna2.blindsidenetworks.com/invite/to?c=Gi-j-XmXYNxwWNPGwrbe2Y6Yb3tuSAldPoK2NZn3uUk&m=f182c5fed6c3b14d3a8379e50632e1a4ffbbe5a0&t=1653422432457&u=senecacollege)
+To view the session click here [WS2 Overview](https://recordings.rna2.blindsidenetworks.com/senecacollege/142746f4e9d27ffabde29661522c53351062c6d5-1653422432497/capture/)
 
 ## Learning Outcomes
 
