@@ -215,10 +215,24 @@ Student* students;
 This **Student** pointer should point to the dynamic array of students. 
 #### Functions
 
-The following function is already implemented in the **Student** module:  
+The following function code is already provided for you, you just need to implement it in the **Student** module:  
 ##### sort
-This function sorts the dynamic array of students based on the Grade of the students.
-
+This function sorts the dynamic array of students based on the Grade of the students. Please refer below for the desired code:<br />
+```C
+void sort() {
+      int i, j;
+      Student temp;
+      for (i = noOfStudents - 1; i > 0; i--) {
+         for (j = 0; j < i; j++) {
+            if (students[j].m_grade > students[j + 1].m_grade) {
+               temp = students[j];
+               students[j] = students[j + 1];
+               students[j + 1] = temp;
+            }
+         }
+      }
+   }
+```
 #### Complete the implementation of the following functions:
 ##### load 
 This overload of the **load** function returns a **bool** and receives a **Student** reference.<br />
@@ -226,7 +240,7 @@ In a local array of 128 characters, it will try to read the student name from th
 Afterwards it will read the student number and the grade into the corresponding variables of the **Student** Reference.<br />
 If all the reads were successful, it will return true, otherwise false.
 ##### load
-This overload of the **load** function loads all the student records into the Student array and returns a bool for success and has no arguments.<br />
+This overload of the **load** function loads all the student records into the Student array and returns a bool for success and takes a file name as a parameter (filename is represented as a char array).<br />
 First open the data file.<br />
 Then set the number of students to the number of records in the file and then allocate a dynamic array of students pointed by the global **Student** pointer; **"students"** to the number of the records in the file. <br />
 Then load the students one by one from the file into the dynamic array of students.<br />
