@@ -1,6 +1,8 @@
 # Workshop #2: References, Function Overloading, Dynamic Memory
 
-* Version 1.0
+* Version 1.1<br />
+  Part 1: Added the sort implementation and corrected the one argument load function description<br />
+  Part 2: Corrected the bad records in db.csv
 
 
 In this workshop, you will use references, overload functions, and deallocate (free) memory.
@@ -215,24 +217,10 @@ Student* students;
 This **Student** pointer should point to the dynamic array of students. 
 #### Functions
 
-The following function code is already provided for you, you just need to implement it in the **Student** module:  
+The following function is already implemented in the **Student** module:  
 ##### sort
-This function sorts the dynamic array of students based on the Grade of the students. Please refer below for the desired code:<br />
-```C
-void sort() {
-      int i, j;
-      Student temp;
-      for (i = noOfStudents - 1; i > 0; i--) {
-         for (j = 0; j < i; j++) {
-            if (students[j].m_grade > students[j + 1].m_grade) {
-               temp = students[j];
-               students[j] = students[j + 1];
-               students[j + 1] = temp;
-            }
-         }
-      }
-   }
-```
+This function sorts the dynamic array of students based on the Grade of the students.
+
 #### Complete the implementation of the following functions:
 ##### load 
 This overload of the **load** function returns a **bool** and receives a **Student** reference.<br />
@@ -240,7 +228,7 @@ In a local array of 128 characters, it will try to read the student name from th
 Afterwards it will read the student number and the grade into the corresponding variables of the **Student** Reference.<br />
 If all the reads were successful, it will return true, otherwise false.
 ##### load
-This overload of the **load** function loads all the student records into the Student array and returns a bool for success and takes a file name as a parameter (filename is represented as a char array).<br />
+This overload of the **load** function that receives a file name for data file and loads all the student records into the Student array and returns a bool for success and has no arguments.<br />
 First open the data file.<br />
 Then set the number of students to the number of records in the file and then allocate a dynamic array of students pointed by the global **Student** pointer; **"students"** to the number of the records in the file. <br />
 Then load the students one by one from the file into the dynamic array of students.<br />
@@ -329,6 +317,16 @@ The names and birthdates in the file are not sorted. Your search results must be
 
 ## Tester Program
 ```C++
+/* ------------------------------------------------------
+Workshop 2 part 2
+Module: N/A
+Filename: main.cpp
+Version 1.1
+Revision History
+-----------------------------------------------------------
+Date       Reason
+may 25th   Data file had bad records and are fixed now.
+-----------------------------------------------------------*/
 #include <iostream>
 #include "BirthDate.h"
 using namespace std;
@@ -337,11 +335,12 @@ int main() {
    bool done = false;
    int month = 0;
    char filename[256];
+   cout << "V1.1 corrected the data file records" << endl;
    cout << "Enter data file name: ";
    cin >> filename;
    if (beginSearch(filename)) {
       while (!done) {
-         cout << "Enter a month of birth or 0 to exit" << endl;
+         cout << "Enter a month of birth or 0 to exit: ";
          cin >> month;
          if (month == 0) {
             done = true;
@@ -365,55 +364,51 @@ int main() {
 
 ## Execution Sample
 ```Text
+V1.1 corrected the data file records
 Enter data file name: bd.csv
 Birthdate search program
-Enter a month of birth or 0 to exit
-11
-14 birthdates found:
+Enter a month of birth or 0 to exit: 11
+13 birthdates found:
 1) Chelsea Douglas:
 1941-11-18
 ===================================
 2) Savana Morgan:
 1942-11-28
 ===================================
-3) Arthur:
+3) Joyce Moore:
 1943-11-15
 ===================================
-4) Joyce Moore:
-1943-11-15
-===================================
-5) Bruce Howard:
+4) Bruce Howard:
 1949-11-6
 ===================================
-6) Nicole Andrews:
+5) Nicole Andrews:
 1962-11-5
 ===================================
-7) Madaline Wells:
+6) Madaline Wells:
 1968-11-1
 ===================================
-8) Eddy Cameron:
+7) Eddy Cameron:
 1970-11-18
 ===================================
-9) James Payne:
+8) James Payne:
 1974-11-28
 ===================================
-10) Chelsea Murphy:
+9) Chelsea Murphy:
 1976-11-25
 ===================================
-11) Antony Perry:
+10) Antony Perry:
 1989-11-6
 ===================================
-12) Ellia Craig:
+11) Ellia Craig:
 1991-11-6
 ===================================
-13) Dainton Bailey:
+12) Dainton Bailey:
 1997-11-7
 ===================================
-14) Kevin Martin:
+13) Kevin Martin:
 1998-11-3
 ===================================
-Enter a month of birth or 0 to exit
-0
+Enter a month of birth or 0 to exit: 0
 Birthdate Search Program Closed.
 ```
 ## 🗎 Reflection
