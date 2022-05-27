@@ -3,7 +3,9 @@
 * Version 1.1<br />
   Part 1: Added the sort implementation and corrected the one argument load function description<br />
   Part 2: Corrected the bad records in db.csv
-
+* Version 1.2<br />
+  Changed the format of the **db.csv** file from UTF-08 BOM to ASCII (this will remove the three extra identifying characters from the beginning of the file)<br />  
+  This will not change the output, if you have already submitted your work there is no need for a resubmit.
 
 In this workshop, you will use references, overload functions, and deallocate (free) memory.
 
