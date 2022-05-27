@@ -225,12 +225,12 @@ This function sorts the dynamic array of students based on the Grade of the stud
 
 #### Complete the implementation of the following functions:
 ##### load 
-This overload of the **load** function returns a **bool** and receives a **Student** reference.<br />
+The **load** function returns a **bool** and receives a **Student** reference.<br />
 In a local array of 128 characters, it will try to read the student name from the file. If successful it will find the actual length of the student name using the **strlen** function and then add one to the length (for null termination) and allocate the same amount of characters in the name of the **Student** reference. Then it will copy the read name (from the local character array) into the newly allocated name of the **Student** reference using **strcpy**.<br />
 Afterwards it will read the student number and the grade into the corresponding variables of the **Student** Reference.<br />
 If all the reads were successful, it will return true, otherwise false.
 ##### load
-This overload of the **load** function that receives a file name for data file and loads all the student records into the Student array and returns a bool for success and has no arguments.<br />
+This overload of the **load** function receives a file name for data file and loads all the student records into the Student array and returns a bool for success ~~and has no arguments~~.<br />
 First open the data file.<br />
 Then set the number of students to the number of records in the file and then allocate a dynamic array of students pointed by the global **Student** pointer; **"students"** to the number of the records in the file. <br />
 Then load the students one by one from the file into the dynamic array of students.<br />
