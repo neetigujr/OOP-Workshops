@@ -11,8 +11,16 @@ Date       Reason
 -----------------------------------------------------------*/
 #include "Student.h"
 using namespace sdds;
-int main() {
-   if (load("students.csv")) {
+struct Student {
+      char* m_name;
+      int m_studentNumber;
+      char m_grade;
+   };
+int main() 
+{
+  struct student s[14];
+   if (load("students.csv")) 
+   {
       display();
    }
    deallocateMemory();
